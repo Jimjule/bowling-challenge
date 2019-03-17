@@ -44,13 +44,13 @@ describe("bowling", function() {
   });
 
   it("addScore increases roll by two if strike is scored", function() {
-    bowling.makeRoll('strike')
+    bowling.makeRoll(10)
     expect(bowling.roll).toEqual(3);
   });
 
   it("rollMax increased by 1 if roll 19 is a strike", function() {
     bowling.roll = 19
-    bowling.makeRoll('strike')
+    bowling.makeRoll(10)
     expect(bowling.rollMax).toEqual(21);
   });
 
@@ -62,10 +62,17 @@ describe("bowling", function() {
 
   it("ends the game when the turn limit is exceeded - 21 rolls", function() {
     bowling.roll = 19
-    bowling.makeRoll('strike')
+    bowling.makeRoll(10)
     bowling.makeRoll(4)
     bowling.makeRoll(4)
     expect(bowling.status).toEqual('Game Over');
+  });
+
+  it("ends the game when the turn limit is exceeded - 21 rolls", function() {
+    bowling.makeRoll(10)
+    bowling.makeRoll(4)
+    bowling.makeRoll(4)
+    expect(bowling.score[0]).toEqual(18);
   });
 
 });

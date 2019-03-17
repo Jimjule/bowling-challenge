@@ -168,3 +168,24 @@ addScore if/else statement refactored to just an if statement, with the same fun
   Now that I can see the scores, it's time to implement the strike functionality using the algorithms noted above.
 
 TEST
+Unit test expecting that scoring a strike and then two fours saves the strike as 18
+
+ERROR
+(Expected 'strike' to equal 18)
+
+GREEN
+Added strike function to makeRoll, so that if two rolls before was a strike, the strike is re-scored
+
+REFACTOR Plan 1
+The current strike system only works if strikes never overlap, which is unreasonable. It is necessary to refactor the score system to allow for a perfect game, which means calculating the score backwards every turn.
+
+REFACTOR Plan 2
+A simpler idea for now would be to change 'strike' to 10, allowing scoring in real time
+
+Went with 2, fewer potential pitfalls
+
+RED
+Some tests broken by changing of 'strike' to 10
+
+GREEN
+Changed tests accordingly
