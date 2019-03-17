@@ -1,22 +1,25 @@
 function Bowling() {
   this.score = []
   this.roll = 1
-  this.frame = 1
+  this.frame = Math.ceil(this.roll/2)
   this.rollMax = 20
   this.frameMax = 10
   this.status = 'In progress'
 };
 
+Bowling.prototype.makeRoll = function(pins) {
+  bowling.gameOver()
+  bowling.addScore(pins)
+  bowling.checkLast(pins)
+  bowling.rollIncrement(pins)
+};
 
 Bowling.prototype.addScore = function(pins) {
-  this.score.push(pins)
-  bowling.checkLast(pins)
-  if (pins == 'strike' && this.roll != 19) {
-    this.roll += 2
+  if (this.status == "Game Over") {
+    return "You get NOTHING"
   } else {
-    this.roll ++
+    this.score.push(pins)
   }
-  bowling.gameOver()
 };
 
 Bowling.prototype.checkLast = function(pins) {
@@ -26,7 +29,16 @@ Bowling.prototype.checkLast = function(pins) {
 };
 
 Bowling.prototype.gameOver = function(pins) {
-  if (this.roll > this.rollMax) {
+  if (this.roll >= this.rollMax) {
     this.status = 'Game Over'
+    this.roll = this.rollMax
   }
 };
+
+Bowling.prototype.rollIncrement = function(pins) {
+  if (pins == 'strike' && this.roll != 19) {
+    this.roll += 2
+  } else {
+    this.roll ++
+  }
+}

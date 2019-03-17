@@ -9,62 +9,100 @@
     <title></title>
   </head>
   <body>
-    <div>
-      <h1>Bowling Scoresheet</h1>
+    <div id="scoresheet">
+      <div>
+        <h1>Bowling Scoresheet</h1>
+      </div>
+      <div>
+        <h2 id="roll">Rolls?</h2>
+        <br>
+        <h2 id="frame">Frames?</h2>
+        <br>
+        <h2 id="score">Score?</h2>
+        <br>
+          <!-- <input type="text" id="scoreNum"> -->
+        <div id="row">
+          <input type="submit" id="scoreForm1" value="1">
+          <input type="submit" id="scoreForm2" value="2">
+          <input type="submit" id="scoreForm3" value="3">
+          <input type="submit" id="scoreForm4" value="4">
+          <input type="submit" id="scoreForm5" value="5">
+          <input type="submit" id="scoreForm6" value="6">
+          <input type="submit" id="scoreForm7" value="7">
+          <input type="submit" id="scoreForm8" value="8">
+          <input type="submit" id="scoreForm9" value="9">
+          <input type="submit" id="scoreForm10" value="10">
+        </div>
+        <br>
+        <h2 id="gameStatus">Game Over?</h2>
+        <h2 id="checkValue">TEST</h2>
+      </div>
     </div>
-
   <script src="../src/bowling.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script>
 
     $(document).ready(function() {
-      therm = new Thermostat();
-      setTemp();
+      bowling = new Bowling();
+      rollFrame();
     })
 
-    function setTemp() {
-      $('#currentTemp').text("Current temp is " + therm.temp);
-      $('#usage').text(therm.usage())
-      $('#usage').attr('class', therm.usage());
+    function rollFrame() {
+      $('#roll').text("Roll number " + bowling.roll + " of " + bowling.rollMax);
+      $('#frame').text("Frame number " + Math.ceil(bowling.roll/2) + " of " + bowling.frameMax);
+      $('#score').text("Score: " + bowling.score);
+      $('#gameStatus').text("Game Status: " + bowling.status);
+      $('#checkValue').text("It's " + makeRoll(document.getElementById('scoreNum').value));
     }
 
-    $('#up').click(function() {
-      $('#feedback').text("")
-      try {
-        therm.up();
-        setTemp();
-      }
-      catch(error) {
-        $('#feedback').text(error)
-      }
+    $('#scoreForm1').click(function() {
+      bowling.makeRoll(1);
+      rollFrame();
     })
 
-    $('#down').click(function() {
-      $('#feedback').text("")
-      try {
-        therm.down();
-        setTemp();
-      }
-      catch(error) {
-        $('#feedback').text(error)
-      }
+    $('#scoreForm2').click(function() {
+      bowling.makeRoll(2);
+      rollFrame();
     })
 
-    $('#reset').click(function() {
-      $('#feedback').text("")
-      therm.reset();
-      setTemp();
+    $('#scoreForm3').click(function() {
+      bowling.makeRoll(3);
+      rollFrame();
     })
 
-    $('#toggle').click(function() {
-      $('#feedback').text("")
-      therm.toggle();
-      setTemp();
-      if (therm.powerSaving == true) {
-        $('#toggle').text("Turn Power-Saving OFF")
-      } else {
-        $('#toggle').text("Turn Power-Saving ON")
-      }
+    $('#scoreForm4').click(function() {
+      bowling.makeRoll(4);
+      rollFrame();
+    })
+
+    $('#scoreForm5').click(function() {
+      bowling.makeRoll(5);
+      rollFrame();
+    })
+
+    $('#scoreForm6').click(function() {
+      bowling.makeRoll(6);
+      rollFrame();
+    })
+
+    $('#scoreForm7').click(function() {
+      bowling.makeRoll(7);
+      rollFrame();
+    })
+
+    $('#scoreForm8').click(function() {
+      bowling.makeRoll(8);
+      rollFrame();
+    })
+
+    $('#scoreForm9').click(function() {
+      bowling.makeRoll(9);
+      rollFrame();
+    })
+
+    $('#scoreForm10').click(function() {
+      bowling.makeRoll('strike');
+      rollFrame();
     })
 
   </script>

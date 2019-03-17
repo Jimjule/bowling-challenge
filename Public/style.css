@@ -12,3 +12,7 @@ div {
   align-items: center;
   justify-content: center;
 }
+
+#row {
+  flex-direction: row;
+}
