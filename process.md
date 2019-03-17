@@ -150,3 +150,21 @@ THINKING ABOUT SCORING
 
   To implement strike score:
   Put a new function at the top of addScore that uses similar syntax to above to check if 2 rolls back has a strike, and if 1 roll back has a spare, and if so adds the appropriate amount
+
+SETUP
+HTML webpage made to display game information like roll and frame number, and score. Buttons call the addScore function from 1-10.
+
+REFACTOR
+The addScore function was overloaded, so the makeRoll function handles the calling of the functions every turn, and addScore just...adds the score.
+
+RED
+Moving the functions has broken the spec tests, so they've been renamed accordingly.
+
+GREEN
+
+REFACTOR
+addScore if/else statement refactored to just an if statement, with the same functionality.
+
+  Now that I can see the scores, it's time to implement the strike functionality using the algorithms noted above.
+
+TEST

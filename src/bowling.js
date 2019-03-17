@@ -15,9 +15,7 @@ Bowling.prototype.makeRoll = function(pins) {
 };
 
 Bowling.prototype.addScore = function(pins) {
-  if (this.status == "Game Over") {
-    return "You get NOTHING"
-  } else {
+  if (this.status != "Game Over") {
     this.score.push(pins)
   }
 };
@@ -36,7 +34,7 @@ Bowling.prototype.gameOver = function(pins) {
 };
 
 Bowling.prototype.rollIncrement = function(pins) {
-  if (pins == 'strike' && this.roll != 19) {
+  if (pins == 'strike' && this.roll < 19) {
     this.roll += 2
   } else {
     this.roll ++
