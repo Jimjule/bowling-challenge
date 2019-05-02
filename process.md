@@ -201,6 +201,21 @@ GREEN
 Created spare function, based on the logic of the strike function
 
 
+FEATURE
+Added test for gutter game, with total of 0
+
+GREEN
+
+
+FEATURE
+Added test for perfect game, with total of 300
+
+RED
+Expected 290 to eq 300
+
+GREEN
+Created function that checks only 1 turn back for strikes when on the last turn
+
 <!-- TEST
 Unit test for spares, expect total for frame to not exceed ten on turn
 

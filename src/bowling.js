@@ -13,6 +13,7 @@ Bowling.prototype.makeRoll = function(pins) {
   bowling.addScore(pins)
   bowling.strike()
   bowling.spare()
+  bowling.lastTurnStrike()
   bowling.fullScore()
   bowling.checkLast(pins)
   bowling.rollIncrement(pins)
@@ -54,6 +55,12 @@ Bowling.prototype.strike = function() {
 
 Bowling.prototype.spare = function() {
   if (this.score[this.score.length - 3] + this.score[this.score.length - 2] == 10) {
+    this.score[this.score.length - 2] = this.score[this.score.length - 2] + this.score[this.score.length - 1]
+  }
+};
+
+Bowling.prototype.lastTurnStrike = function() {
+  if (this.score[this.score.length - 2] == 10 && this.roll == this.rollMax) {
     this.score[this.score.length - 2] = this.score[this.score.length - 2] + this.score[this.score.length - 1]
   }
 };
