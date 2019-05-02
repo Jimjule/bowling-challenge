@@ -215,3 +215,6 @@ Expected 290 to eq 300
 
 GREEN
 Created function that checks only 1 turn back for strikes when on the last turn
+
+FEATURE
+Added 0 button so that 0 can be scored
