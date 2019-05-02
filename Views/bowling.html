@@ -20,9 +20,7 @@
         <br>
         <h2 id="score">Score?</h2>
         <br>
-        <!-- <h2 id="scoreCalc">Calc?</h2> -->
-        <!-- <br> -->
-        <h2 id="total">Total?</h2>
+        <h2 id="scoreCalc">Calc?</h2>
         <br>
           <!-- <input type="text" id="scoreNum"> -->
         <div id="row">
@@ -55,10 +53,9 @@
       $('#roll').text("Roll number " + bowling.roll + " of " + bowling.rollMax);
       $('#frame').text("Frame number " + Math.ceil(bowling.roll/2) + " of " + bowling.frameMax);
       $('#score').text("Score: " + bowling.score);
-      // $('#scoreCalc').text("Score Calc: " + bowling.tempScore);
+      $('#scoreCalc').text("Total: " + bowling.total);
       $('#gameStatus').text("Game Status: " + bowling.status);
       $('#checkValue').text("It's " + makeRoll(document.getElementById('scoreNum').value));
-      $('#total').text("Total: " + bowling.total);
     }
 
     $('#scoreForm1').click(function() {

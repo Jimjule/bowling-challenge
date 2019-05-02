@@ -189,3 +189,20 @@ Some tests broken by changing of 'strike' to 10
 
 GREEN
 Changed tests accordingly
+
+
+TEST
+Unit test for spares, expecting the total score after a spare to be higher
+
+RED
+14 != 18
+
+GREEN
+Created spare function, based on the logic of the strike function
+
+
+<!-- TEST
+Unit test for spares, expect total for frame to not exceed ten on turn
+
+RED
+Score can exceed ten (expect 5 to equal 4) -->
