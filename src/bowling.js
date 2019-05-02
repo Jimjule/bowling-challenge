@@ -21,7 +21,6 @@ Bowling.prototype.makeRoll = function(pins) {
 
 Bowling.prototype.addScore = function(pins) {
   if (this.status != "Game Over") {
-    // bowling.limitTen(pins)
     this.score.push(pins)
   }
 };
@@ -71,9 +70,3 @@ Bowling.prototype.fullScore = function() {
     this.total += this.score[k]
   }
 }
-
-// Bowling.prototype.limitTen = function(pins) {
-//   if ((pins + this.score[this.roll - 1]) > 10 && this.roll % 2 == 0) {
-//     pins = 10 - this.score[this.roll - 1]
-//   }
-// };

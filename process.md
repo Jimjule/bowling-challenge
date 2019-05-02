@@ -215,9 +215,3 @@ Expected 290 to eq 300
 
 GREEN
 Created function that checks only 1 turn back for strikes when on the last turn
-
-<!-- TEST
-Unit test for spares, expect total for frame to not exceed ten on turn
-
-RED
-Score can exceed ten (expect 5 to equal 4) -->

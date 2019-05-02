@@ -78,25 +78,8 @@ describe("bowling", function() {
   it("tracks spares", function() {
     bowling.makeRoll(6)
     bowling.makeRoll(4)
-    console.log(bowling.score[bowling.score.length - 2])
-    console.log(bowling.score[bowling.score.length - 1])
     bowling.makeRoll(4)
-    console.log(bowling.score[bowling.score.length - 3])
-    console.log(bowling.score[bowling.score.length - 2])
-    console.log(bowling.score[bowling.score.length - 1])
     expect(bowling.score[0] + bowling.score[1] + bowling.score[2]).toEqual(18);
   });
-
-  // it("limits normal frame score to 10", function() {
-  //   bowling.makeRoll(6)
-  //   bowling.makeRoll(5)
-  //   expect(bowling.score[1].toEqual(4);
-  // });
-
-  // it("limits normal frame score to 10", function() {
-  //   bowling.makeRoll(6)
-  //   bowling.makeRoll(5)
-  //   expect(bowling.score[1]).toEqual(4);
-  // });
 
 });
