@@ -4,7 +4,7 @@ describe("perfect game", function() {
     bowling = new Bowling
   })
 
-  it("scores 0 on every roll", function() {
+  it("scores 300", function() {
     bowling.makeRoll(10)
     bowling.makeRoll(10)
     bowling.makeRoll(10)

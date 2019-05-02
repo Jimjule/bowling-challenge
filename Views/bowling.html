@@ -23,6 +23,7 @@
         <h2 id="scoreCalc">Calc?</h2>
         <br>
         <div id="row">
+          <input type="submit" id="scoreForm0" value="0">
           <input type="submit" id="scoreForm1" value="1">
           <input type="submit" id="scoreForm2" value="2">
           <input type="submit" id="scoreForm3" value="3">
@@ -36,7 +37,6 @@
         </div>
         <br>
         <h2 id="gameStatus">Game Over?</h2>
-        <h2 id="checkValue">TEST</h2>
       </div>
     </div>
   <script src="../src/bowling.js"></script>
@@ -56,6 +56,11 @@
       $('#gameStatus').text("Game Status: " + bowling.status);
       $('#checkValue').text("It's " + makeRoll(document.getElementById('scoreNum').value));
     }
+
+    $('#scoreForm0').click(function() {
+      bowling.makeRoll(0);
+      rollFrame();
+    })
 
     $('#scoreForm1').click(function() {
       bowling.makeRoll(1);
