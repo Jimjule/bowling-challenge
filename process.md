@@ -18,6 +18,7 @@ Made Bowling function
 ERROR
 (Expected undefined to equal [])
 
+---
 
 TEST
 Jasmine unit test expecting bowling.roll to start at 1
@@ -28,6 +29,7 @@ ERROR
 GREEN
 Defined bowling.roll
 
+---
 
 TEST
 Jasmine unit test expecting bowling.frame to start at 1
@@ -38,6 +40,7 @@ ERROR
 GREEN
 Defined bowling.frame
 
+---
 
 TEST
 Jasmine unit test expecting bowling.addScore to add a number to this.score
@@ -48,6 +51,7 @@ ERROR
 GREEN
 Made bowling.addScore push a number to this.score array
 
+---
 
 TEST
 Jasmine unit test expecting bowling.addScore to increment this.roll
@@ -58,6 +62,7 @@ ERROR
 GREEN
 Made addScore increment
 
+---
 
 TEST
 Jasmine unit test expecting bowling.addScore to increment this.roll by 2 if strike
@@ -68,6 +73,7 @@ ERROR
 GREEN
 Added if statement to addScore so strikes increment by 2
 
+---
 
 TEST
 Jasmine unit test expecting bowling.rollMax to equal 20
@@ -78,6 +84,7 @@ ERROR
 GREEN
 Made rollMax = 20
 
+---
 
 TEST
 Jasmine unit test expecting bowling.frameMax to equal 10
@@ -88,6 +95,7 @@ ERROR
 GREEN
 Made frameMax = 10
 
+---
 
 TEST
 Jasmine unit test expecting bowling.rollMax to increase if turn 19 is a strike
@@ -98,6 +106,7 @@ ERROR
 GREEN
 Added a check19 function that increments rollMax if strike
 
+---
 
 REFACTOR
 Added an extra condition to addScore to prevent skipping rolls on the final frame
@@ -105,6 +114,7 @@ Added an extra condition to addScore to prevent skipping rolls on the final fram
 
   Scoring in bowling is the most difficult algorithm owing to strikes and spares.
 
+---
 
 TEST
 Jasmine unit test expecting the game to end when the turn limit is exceeded.
@@ -121,13 +131,14 @@ ERROR
 GREEN
 Made this.status equal 'Game Over' once turn limit was reached
 
+---
 
 TEST
 Jasmine unit test checking the functionality of Game Over, even when turn limit is extended.
 
 GREEN
 
-
+---
 
 THINKING ABOUT SCORING
 
@@ -151,6 +162,8 @@ THINKING ABOUT SCORING
   To implement strike score:
   Put a new function at the top of addScore that uses similar syntax to above to check if 2 rolls back has a strike, and if 1 roll back has a spare, and if so adds the appropriate amount
 
+---
+
 SETUP
 HTML webpage made to display game information like roll and frame number, and score. Buttons call the addScore function from 1-10.
 
@@ -162,10 +175,14 @@ Moving the functions has broken the spec tests, so they've been renamed accordin
 
 GREEN
 
+---
+
 REFACTOR
 addScore if/else statement refactored to just an if statement, with the same functionality.
 
   Now that I can see the scores, it's time to implement the strike functionality using the algorithms noted above.
+
+---
 
 TEST
 Unit test expecting that scoring a strike and then two fours saves the strike as 18
@@ -176,6 +193,8 @@ ERROR
 GREEN
 Added strike function to makeRoll, so that if two rolls before was a strike, the strike is re-scored
 
+---
+
 REFACTOR Plan 1
 The current strike system only works if strikes never overlap, which is unreasonable. It is necessary to refactor the score system to allow for a perfect game, which means calculating the score backwards every turn.
 
@@ -184,12 +203,15 @@ A simpler idea for now would be to change 'strike' to 10, allowing scoring in re
 
 Went with 2, fewer potential pitfalls
 
+---
+
 RED
 Some tests broken by changing of 'strike' to 10
 
 GREEN
 Changed tests accordingly
 
+---
 
 TEST
 Unit test for spares, expecting the total score after a spare to be higher
@@ -200,12 +222,14 @@ RED
 GREEN
 Created spare function, based on the logic of the strike function
 
+---
 
 FEATURE
 Added test for gutter game, with total of 0
 
 GREEN
 
+---
 
 FEATURE
 Added test for perfect game, with total of 300
@@ -216,5 +240,12 @@ Expected 290 to eq 300
 GREEN
 Created function that checks only 1 turn back for strikes when on the last turn
 
+---
+
 FEATURE
 Added 0 button so that 0 can be scored
+
+GREEN
+All working as expected
+
+---
